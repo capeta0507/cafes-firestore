@@ -11,10 +11,10 @@ class CafeItem extends Component {
     let cafe = this.props.cafe;
     return (
         <div className="row item" onClick={() => {this.clickHandel(cafe)}}>
-            <div className="col-md-6" >
+            <div className="col-md-6 col-sm-6 col-6" >
                 {cafe.name}
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-sm-6 col-6">
                 {cafe.city}
             </div>
         </div>

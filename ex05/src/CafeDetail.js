@@ -27,18 +27,18 @@ class CafeDetail extends Component {
         <div className="card">
             <div className="card-body">
                 <div className="row">
-                    <div className="col-md-4 col-sm-4">
+                    <div className="col-md-4 col-sm-4 col-4">
                         <h5 className="card-title">id:</h5>
                     </div>
-                    <div className="col-md-8 col-sm-8">
+                    <div className="col-md-8 col-sm-8 col-8">
                         <span className="card-title">{mycafe.id}</span>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-4 col-sm-4">
+                    <div className="col-md-4 col-sm-4 col-4">
                         <h5 className="card-title">name:</h5>
                     </div>
-                    <div className="col-md-8 col-sm-8">
+                    <div className="col-md-8 col-sm-8 col-8">
                         <input type="text" className="form-control"
                                            name="inpName" 
                                            value={mycafe.name}
@@ -46,10 +46,10 @@ class CafeDetail extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-4 col-sm-4">
+                    <div className="col-md-4 col-sm-4 col-4">
                         <h5 className="card-title">city:</h5>
                     </div>
-                    <div className="col-md-8 col-sm-8">
+                    <div className="col-md-8 col-sm-8 col-8">
                     <input type="text" className="form-control" 
                                        name="inpCity" 
                                        value={mycafe.city}
@@ -57,10 +57,10 @@ class CafeDetail extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-6 col-sm-6 btn_wid">
+                    <div className="col-md-6 col-sm-6 col-6 btn_wid">
                         <button className="btn btn-info" onClick={() => {this.updateCafe()}}>修改</button>
                     </div>
-                    <div className="col-md-6 col-sm-6 btn_wid align">
+                    <div className="col-md-6 col-sm-6 col-6 btn_wid align">
                         <button className="btn btn-danger" onClick={() => {this.delete(mycafe.docId)}}>刪除</button>
                     </div>
                 </div>

@@ -43,18 +43,18 @@ class CafeAdd extends Component {
     return (
             <form className="form-group" onSubmit={this.submitAddList}>
                 <div className="form-row">
-                    <div className="col-5">
+                    <div className="col-lg-5 col-md-5 col-sm-5 col-5">
                         <input onChange={this.handle} 
                             name="name" className="form-control"  placeholder="name">
                         </input>
                     </div>
-                    <div className="col-5">
+                    <div className="col-lg-5 col-md-5 col-sm-5 col-5">
                         <input onChange={this.handle} 
                             name="city"
                             className="form-control" placeholder="city">
                         </input>
                     </div>
-                    <div className="col-2">
+                    <div className="col-lg-2 col-md-2 col-sm-2 col-2">
                         <button className="btn btn-primary" type="submit">送出</button>
                     </div>
                 </div>
