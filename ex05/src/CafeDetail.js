@@ -24,49 +24,79 @@ class CafeDetail extends Component {
     let mycafe = this.props.cafe;
 
     return (
-        <div className="card">
-            <div className="card-body">
-                <div className="row">
-                    <div className="col-md-4 col-sm-4 col-4">
-                        <h5 className="card-title">id:</h5>
-                    </div>
-                    <div className="col-md-8 col-sm-8 col-8">
-                        <span className="card-title">{mycafe.id}</span>
+        <div>
+            {/* 咖啡詳細資訊卡 */}
+            <div className="card">
+                <div className="card-body">
+                    <div className="row">
+                        <div className="col-md-4 col-sm-4 col-4">
+                            <h5 className="card-title">id:</h5>
+                        </div>
+                        <div className="col-md-8 col-sm-8 col-8">
+                            <span className="card-title">{mycafe.id}</span>
+                        </div>
+                        <div className="col-md-4 col-sm-4 col-4">
+                            <h5 className="card-title">name:</h5>
+                        </div>
+                        <div className="col-md-8 col-sm-8 col-8">
+                            <input type="text" className="form-control"
+                                            name="inpName" 
+                                            value={mycafe.name}
+                                            onChange={(e) => {this.updateName(e)}}/>
+                        </div>
+                        <div className="col-md-4 col-sm-4 col-4">
+                            <h5 className="card-title">city:</h5>
+                        </div>
+                        <div className="col-md-8 col-sm-8 col-8">
+                        <input type="text" className="form-control" 
+                                        name="inpCity" 
+                                        value={mycafe.city}
+                                        onChange={this.updateCity}/>
+                        </div>
+                        <div className="col-md-6 col-sm-6 col-6 btn_wid">
+                            <button disabled={mycafe.id === 0} className="btn btn-info"
+                                    data-toggle="modal" data-target="#update">修改</button>
+                        </div>
+                        <div className="col-md-6 col-sm-6 col-6 btn_wid align">
+                            <button disabled={mycafe.id === 0} className="btn btn-danger"
+                                    data-toggle="modal" data-target="#delete">刪除</button>
+                        </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-4 col-sm-4 col-4">
-                        <h5 className="card-title">name:</h5>
-                    </div>
-                    <div className="col-md-8 col-sm-8 col-8">
-                        <input type="text" className="form-control"
-                                           name="inpName" 
-                                           value={mycafe.name}
-                                           onChange={(e) => {this.updateName(e)}}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-4 col-sm-4 col-4">
-                        <h5 className="card-title">city:</h5>
-                    </div>
-                    <div className="col-md-8 col-sm-8 col-8">
-                    <input type="text" className="form-control" 
-                                       name="inpCity" 
-                                       value={mycafe.city}
-                                       onChange={this.updateCity}/>
+            </div>
+            {/* 修改互動視窗 */}
+            <div className="modal fade" id="update" tabIndex="-1" role="dialog">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">您確定要修改嗎?</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">否</button>
+                            <button type="button" className="btn btn-primary"  data-dismiss="modal" onClick={() => {this.updateCafe()}}>是</button>
+                        </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-6 col-sm-6 col-6 btn_wid">
-                        <button className="btn btn-info" onClick={() => {this.updateCafe()}}>修改</button>
-                    </div>
-                    <div className="col-md-6 col-sm-6 col-6 btn_wid align">
-                        <button className="btn btn-danger" onClick={() => {this.delete(mycafe.docId)}}>刪除</button>
+            </div>
+            {/* 刪除互動視窗 */}
+            <div className="modal fade" id="delete" tabIndex="-1" role="dialog">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">您確定要刪除嗎?</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">否</button>
+                            <button type="button" className="btn btn-primary"  data-dismiss="modal" onClick={() => {this.delete(mycafe.docId)}}>是</button>
+                        </div>
                     </div>
                 </div>
-                
-                
-                
             </div>
         </div>
     )
