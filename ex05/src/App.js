@@ -71,10 +71,6 @@ class App extends Component {
   }
   // 刪除功能，取得docId來做刪除動作，最後將cafeItem清空
   delete = (docId) => {
-    if(this.state.cafeItem.id === 0){
-      alert("未選取紀錄");
-      return false;
-    }
     db.collection('cafes').doc(docId).delete();
     this.setState({
       cafeItem:{
