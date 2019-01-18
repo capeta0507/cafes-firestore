@@ -2,9 +2,7 @@
   "name": "ex03",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://capeta0507.github.io/cafes-firestore/ex02/",
   "dependencies": {
-    "gh-pages": "^2.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2"
@@ -12,8 +10,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "develoy":"gh-pages -d build",
-    "predeploy" : "yarn run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
